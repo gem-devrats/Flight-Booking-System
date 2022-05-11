@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Flight-Booking-System';
+
+  isToggleVisible:boolean = false;
+  
+  showToggle(e:any){
+    console.log(e);
+    this.isToggleVisible = !this.isToggleVisible;
+  }
 }
