@@ -1,1 +1,29 @@
-<p>sign-in-screen works!</p>
+<section class="banner">
+    <h1>Airline Booking System</h1>
+    <p class="motto"> Fly to your destination with most efficient flights </p>
+    <div class="card border-primary mb-3 mx-auto login_card">
+        <h5 class="card-header">Login to your account</h5>
+        <div class="card-body">
+            <form class="form" method="post">
+                <div *ngIf="false" class="invalid-feedback">Invalid username or password</div>
+                <div *ngIf="true" class="valid-feedback">You are successfully logged out
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input type="text" id="exampleInputEmail1" name="username" class="form-control"
+                           placeholder="Username"
+                           required autofocus autocomplete="off">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" placeholder="Password" class="form-control"
+                           id="exampleInputPassword1">
+                </div>
+                <div class="container text-center">
+
+                    <button type="submit" class="btn btn-primary login_bot">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
