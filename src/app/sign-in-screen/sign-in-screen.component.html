@@ -4,24 +4,27 @@
     <div class="card border-primary mb-3 mx-auto login_card">
         <h5 class="card-header">Login to your account</h5>
         <div class="card-body">
-            <form class="form" method="post">
-                <div *ngIf="false" class="invalid-feedback">Invalid username or password</div>
-                <div *ngIf="true" class="valid-feedback">You are successfully logged out
-                </div>
+            <form [formGroup]="signin" class="form">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">User Name</label>
-                    <input type="text" id="exampleInputEmail1" name="username" class="form-control"
+                    <input type="email" id="exampleInputEmail1" name="username" class="form-control"
                            placeholder="Username"
-                           required autofocus autocomplete="off">
+                           required autofocus autocomplete="off"
+                           formControlName="userName">
+                           <div *ngIf="signin.get('userName')?.invalid && signin.get('userName')?.touched" class="invalid-feedback">Please provide valid username</div>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" name="password" placeholder="Password" class="form-control"
-                           id="exampleInputPassword1">
+                           id="exampleInputPassword1"
+                           formControlName="password">
+                           <div *ngIf="signin.get('password')?.invalid && signin.get('password')?.touched" class="invalid-feedback">Please provide valid password</div>
                 </div>
                 <div class="container text-center">
 
-                    <button type="submit" class="btn btn-primary login_bot">Submit</button>
+                    <button type="submit" [disabled]="signin.get('userName')?.invalid || signin.get('password')?.invalid" class="btn btn-primary login_bot">Submit</button>
+                    &nbsp; &nbsp; &nbsp;
+                    <button (click)="signupNavigation()" type="button" class="btn btn-warning login_bot">Sign Up</button>
                 </div>
             </form>
         </div>

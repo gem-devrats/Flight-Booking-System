@@ -8,7 +8,7 @@ import { SignUpScreenComponent } from './sign-up-screen/sign-up-screen.component
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FlightDetailsComponent } from './flight-details/flight-details.component';
 import { BookedFlightDetailsComponent } from './booked-flight-details/booked-flight-details.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirebaseAuthService } from './firebase-auth.service';
 import { HardCodedFlightDataService } from './hard-coded-flight-data.service';
 
@@ -24,7 +24,8 @@ import { HardCodedFlightDataService } from './hard-coded-flight-data.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     FirebaseAuthService,

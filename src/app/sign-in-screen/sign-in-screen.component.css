@@ -21,11 +21,12 @@
 }
 
 .banner .card .card-header {
-    color: olive;
+    color: whitesmoke;
     font-weight: bold;
     font-family: cursive;
     background-color: transparent;
     border: none;
+    text-align: center;
 }
 
 .login {
@@ -66,5 +67,9 @@ input:focus{
 }
 
 .invalid-feedback{
+    display: block;
+}
+
+.valid-feedback{
     display: block;
 }

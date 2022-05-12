@@ -1,1 +1,40 @@
-<p>sign-up-screen works!</p>
+<section class="banner">
+    <h1>Airline Booking System</h1>
+    <p class="motto"> Fly to your destination with most efficient flights </p>
+    <div class="card border-primary mb-3 mx-auto login_card">
+        <h5 class="card-header">Create Account</h5>
+        <div class="card-body">
+            <form [formGroup]="signup" class="form">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">User Name</label>
+                    <input type="email" id="exampleInputEmail1" name="username" class="form-control"
+                        placeholder="Username" required autofocus autocomplete="off" formControlName="userName">
+                    <div *ngIf="signup.get('userName')?.invalid && signup.get('userName')?.touched"
+                        class="invalid-feedback">Please provide valid username</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" name="password" placeholder="Password" class="form-control"
+                        id="exampleInputPassword1" formControlName="password">
+                    <div *ngIf="signup.get('password')?.invalid && signup.get('password')?.touched"
+                        class="invalid-feedback">Please provide valid password</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword2" class="form-label">Confirm Password</label>
+                    <input type="password" name="password" placeholder="Password" class="form-control"
+                        id="exampleInputPassword2" formControlName="confirmPassword">
+                    <div *ngIf="signup.get('confirmPassword')?.invalid && signup.get('confirmPassword')?.touched"
+                        class="invalid-feedback">Password doesn't match</div>
+                </div>
+                <div class="container text-center">
+
+                    <button type="submit"
+                    (click)="signIn()"
+                        [disabled]="signup.get('userName')?.invalid || signup.get('password')?.invalid || signup.get('confirmPassword')?.invalid"
+                        class="btn btn-primary login_bot">Sign Up</button>
+                    &nbsp; &nbsp; &nbsp;
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
