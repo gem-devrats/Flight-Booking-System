@@ -1,0 +1,36 @@
+.button{
+    border: none;
+    background-color: transparent;;
+}
+
+.btn{
+    width: 120px;
+    height: 30px;
+    padding: 0;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+img{
+    height: 50px;
+    width: 60px;
+    margin-left: 5%;
+    margin-top: 13px;
+}
+
+.logo-brand{
+    display: inline-flex;
+}
+
+.card{
+    border-radius: 10px;
+}
+
+.flight-card{
+    border-radius: 12px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+}
+

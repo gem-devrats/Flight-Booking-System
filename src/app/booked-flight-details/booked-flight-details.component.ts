@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Flight } from '../flight';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-booked-flight-details',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookedFlightDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user:UserService) { }
+
+  bookedFlightData = this.user.user.bookedFlightData;
 
   ngOnInit(): void {
+
   }
 
 }

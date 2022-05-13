@@ -1,1 +1,41 @@
-<p>booked-flight-details works!</p>
+<div class="container-fluid">
+    <div class="card mt-2 flight-card" *ngFor="let data of bookedFlightData">
+        <div class="logo-brand">
+            <!-- {{data|json}} -->
+            <img [src]="data.logo" alt=""> &nbsp; &nbsp;
+            <p style="font-weight: 200; font-size:medium; margin-top: 2%;">{{data.name}}</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col" style="text-align: left;">
+                    <span style="font-weight: bold; font-size:small">{{data.boardingCode}}<span
+                            style="font-size: 12px; font-weight: 100;">{{data.boarding}}</span></span>
+                    <br>
+                    <span style="font-weight: bold;">{{data.arrivalTime}}</span>
+                    <br>
+                    <a href="#" style="font-size: smaller;">Partially Refundable</a>
+                </div>
+                <div class="col">
+                    <span style="font-weight: bold;">{{data.duration}}</span>
+                </div>
+                <div class="col">
+                    <span style="font-weight: bold; font-size:small">{{data.destinationCode}}<span
+                            style="font-size: 12px; font-weight: 100;">{{data.destination}}</span></span>
+                    <br>
+                    <span style="font-weight: bold;">{{data.reachTime}}</span>
+                </div>
+                <div class="col" style="text-align: right">
+                    <span style="font-weight: bold;">&#8377; {{data.price}}</span>
+                    <br>
+                    <span style="font-weight: 100; font-size:small">No cost EMI from <span
+                            style="font-size: 12px; font-weight: bold;">&#8377;{{data.emi}}</span></span>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning" type="button">BOOK</button>
+                    <br> <br>
+                    <a href="#" style="font-size: 13px; font-weight: bold;">Flight Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

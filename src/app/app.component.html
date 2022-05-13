@@ -16,7 +16,7 @@
   </nav>
 </div>
 <ul class="dropdown-menu" *ngIf="isToggleVisible" aria-labelledby="navbarDropdown">
-  <li><a class="dropdown-item" href="#">Previos Bookings</a></li>
-  <li><a class="dropdown-item" href="#">Log Out</a></li>
+  <li><button (click)="bookedFlights()" class="dropdown-item">Previos Bookings</button></li>
+  <li><button class="dropdown-item">Log Out</button></li>
 </ul>
 <router-outlet></router-outlet>

@@ -11,3 +11,8 @@ ul{
 .dropdown-menu{
     right: 0;
 }
+
+.button{
+    border: none;
+    background-color: transparent;;
+}
