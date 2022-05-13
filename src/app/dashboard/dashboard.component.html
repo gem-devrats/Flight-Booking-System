@@ -1,1 +1,77 @@
-<p>dashboard works!</p>
+<div class="container-fluid">
+    <span style="font-family: Times New Roman; font-weight:bold">
+
+        Sort by
+    </span>
+    <br>
+    <div class="card">
+        <div class="container" style="text-align: center;">
+            <div class="row" style="font-size: 14px;">
+                <div class="col">
+                    <button class="button" (click)="departureFilterActive()"
+                        [class.active]="departure">DEPARTURE</button>
+                    <img *ngIf="departure" class="filter-actice-icon"
+                        src="https://cdn1.iconfinder.com/data/icons/arrows-96/24/arrow_point_direction_move_navigation_61-512.png"
+                        alt="">
+                </div>
+                <div class="col">
+                    <button class="button" (click)="durationFilterActive()" [class.active]="duration"> DURATION</button>
+                    <img *ngIf="duration" class="filter-actice-icon"
+                        src="https://cdn1.iconfinder.com/data/icons/arrows-96/24/arrow_point_direction_move_navigation_61-512.png"
+                        alt="">
+                </div>
+                <div class="col">
+                    <button class="button" (click)="arrivalFilterActive()" [class.active]="arrival"> ARRIVAL</button>
+                    <img *ngIf="arrival" class="filter-actice-icon"
+                        src="https://cdn1.iconfinder.com/data/icons/arrows-96/24/arrow_point_direction_move_navigation_61-512.png"
+                        alt="">
+                </div>
+                <div class="col">
+                    <button class="button" (click)="pricreFilterActive()" [class.active]="price">PRICE</button>
+                    <img *ngIf="price" class="filter-actice-icon"
+                        src="https://cdn1.iconfinder.com/data/icons/arrows-96/24/arrow_point_direction_move_navigation_61-512.png"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card mt-2 flight-card" *ngFor="let data of flightData">
+        <div class="logo-brand">
+            <!-- {{data|json}} -->
+            <img [src]="data.logo" alt=""> &nbsp; &nbsp;
+            <p style="font-weight: 200; font-size:medium; margin-top: 2%;">{{data.name}}</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col" style="text-align: left;">
+                    <span style="font-weight: bold; font-size:small">{{data.boardingCode}}<span
+                            style="font-size: 12px; font-weight: 100;">{{data.boarding}}</span></span>
+                    <br>
+                    <span style="font-weight: bold;">{{data.arrivalTime}}</span>
+                    <br>
+                    <a href="#" style="font-size: smaller;">Partially Refundable</a>
+                </div>
+                <div class="col">
+                    <span style="font-weight: bold;">{{data.duration}}</span>
+                </div>
+                <div class="col">
+                    <span style="font-weight: bold; font-size:small">{{data.destinationCode}}<span
+                            style="font-size: 12px; font-weight: 100;">{{data.destination}}</span></span>
+                    <br>
+                    <span style="font-weight: bold;">{{data.reachTime}}</span>
+                </div>
+                <div class="col" style="text-align: right">
+                    <span style="font-weight: bold;">&#8377; {{data.price}}</span>
+                    <br>
+                    <span style="font-weight: 100; font-size:small">No cost EMI from <span
+                            style="font-size: 12px; font-weight: bold;">&#8377;{{data.emi}}</span></span>
+                </div>
+                <div class="col">
+                    <button class="btn btn-warning" type="button">BOOK</button>
+                    <br> <br>
+                    <a href="#" style="font-size: 13px; font-weight: bold;">Flight Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

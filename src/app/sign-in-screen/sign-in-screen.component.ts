@@ -33,4 +33,8 @@ export class SignInScreenComponent implements OnInit {
     this.router.navigate(['/signUp']);
   }
 
+  signIn(){
+    this.router.navigate(['/dashboard']);
+  }
+
 }
