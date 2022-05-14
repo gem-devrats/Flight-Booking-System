@@ -14,7 +14,8 @@ const routes: Routes = [{ path: '', redirectTo: 'signIn', pathMatch: 'full' },
 { path: 'flightDetail/:id', component: FlightDetailsComponent, canActivate: [AuthGuard] },
 {
   path: 'bookedFlightDetails', component: BookedFlightDetailsComponent, canActivate: [AuthGuard]
-}];
+},
+{path:'**',redirectTo:''}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

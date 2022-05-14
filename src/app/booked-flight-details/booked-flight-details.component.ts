@@ -10,9 +10,9 @@ import { UserService } from '../user.service';
 })
 export class BookedFlightDetailsComponent implements OnInit {
 
-  constructor(private user:UserService) { }
+  constructor(private userService:UserService) { }
 
-  bookedFlightData = this.user.user.bookedFlightData;
+  bookedFlightData = this.userService.user.bookedFlightData;
 
   ngOnInit(): void {
 

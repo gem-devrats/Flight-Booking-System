@@ -8,8 +8,8 @@ export class UserService {
 
   user : any = {};
   constructor() {
-    this.user.name = '';
-    this.user.email = '';
+    this.user.name = localStorage.getItem('name');
+    this.user.email = localStorage.getItem('email');
     let data:[] = JSON.parse(localStorage.getItem('bookedFlightData')||"[]");
     this.user.bookedFlightData = data;
    }
