@@ -26,6 +26,7 @@ export class DashboardComponent implements OnInit {
     this.arrival = false;
     this.price = false;
     this.duration = false;
+    this.hardCodedFlightData.sortByDeparture();
   }
 
   arrivalFilterActive(){
@@ -33,6 +34,7 @@ export class DashboardComponent implements OnInit {
     this.arrival = true;
     this.price = false;
     this.duration = false;
+    this.hardCodedFlightData.sortByArrival();
   }
 
   pricreFilterActive(){
@@ -40,6 +42,7 @@ export class DashboardComponent implements OnInit {
     this.arrival = false;
     this.price = true;
     this.duration = false;
+    this.hardCodedFlightData.sortByPrice();
   }
 
   durationFilterActive(){
@@ -47,6 +50,7 @@ export class DashboardComponent implements OnInit {
     this.arrival = false;
     this.price = false;
     this.duration = true;
+    this.hardCodedFlightData.sortByDuration();
   }
 
   bookFlight(id:Number){

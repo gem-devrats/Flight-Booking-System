@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Flight } from '../flight';
-import { UserService } from '../user.service';
+import { HardCodedFlightDataService } from '../hard-coded-flight-data.service';
 
 @Component({
   selector: 'app-flight-details',
@@ -10,28 +10,27 @@ import { UserService } from '../user.service';
 })
 export class FlightDetailsComponent implements OnInit {
 
-  constructor(private activatedRoute : ActivatedRoute,private userService:UserService) { }
+  constructor(private activatedRoute : ActivatedRoute,private flightData:HardCodedFlightDataService) { }
 
   id : any;
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((param:Params)=>{
       this.id = parseInt(param['get']('id') || '');
     })
-    this.pay();
-  }
-
-
-  pay(){
-    let user: Flight[] = this.userService.user.bookedFlightData;
-    var flight :Flight= new Flight(0,'','','','','','','','',0,0,'');
-    for(let i = 0;i<user.length;i++){
-      if(user[i].id==this.id){
-        flight = user[i];
+    let flightData: Flight[] = this.flightData.flightData;
+    for(let i = 0;i<flightData.length;i++){
+      if(flightData[i].id==this.id){
+        this.flight = flightData[i];
         break;
       }
     }
+  }
+
+  flight:Flight = new Flight(0,'','','','','','','','',0,0,'');
+  
+  pay(){
     let data:Flight[] = JSON.parse(localStorage.getItem('bookedFlightData')||"");
-    data.push(flight);
+    data.push(this.flight);
     localStorage.setItem('bookedFlightData',JSON.stringify(data));
   }
 

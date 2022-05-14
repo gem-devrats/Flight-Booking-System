@@ -47,7 +47,7 @@
                     <span style="font-weight: bold; font-size:small">{{data.boardingCode}}<span
                             style="font-size: 12px; font-weight: 100;">{{data.boarding}}</span></span>
                     <br>
-                    <span style="font-weight: bold;">{{data.arrivalTime}}</span>
+                    <span style="font-weight: bold;">{{data.departure}}</span>
                     <br>
                     <a href="#" style="font-size: smaller;">Partially Refundable</a>
                 </div>
@@ -58,7 +58,7 @@
                     <span style="font-weight: bold; font-size:small">{{data.destinationCode}}<span
                             style="font-size: 12px; font-weight: 100;">{{data.destination}}</span></span>
                     <br>
-                    <span style="font-weight: bold;">{{data.reachTime}}</span>
+                    <span style="font-weight: bold;">{{data.arrivalTime}}</span>
                 </div>
                 <div class="col" style="text-align: right">
                     <span style="font-weight: bold;">&#8377; {{data.price}}</span>
@@ -69,7 +69,8 @@
                 <div class="col">
                     <button (click)="bookFlight(data.id)" class="btn btn-warning" type="button">BOOK</button>
                     <br> <br>
-                    <a href="#" style="font-size: 13px; font-weight: bold;">Flight Details</a>
+                    <a (click)="bookFlight(data.id)" class="dropdown-toggle" type="button" data-toggle="dropdown"
+                        style="font-size: 13px; font-weight: bold; color:blue;">Flight Details</a>
                 </div>
             </div>
         </div>

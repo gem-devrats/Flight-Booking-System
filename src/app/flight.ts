@@ -11,7 +11,7 @@ export class Flight {
         public duration: string,
         public price:Number,
         public emi:Number,
-        public reachTime:string){
+        public departure:string){
 
     }
 }
