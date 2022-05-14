@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FirebaseAuthService } from '../firebase-auth.service';
 
 @Component({
   selector: 'app-sign-up-screen',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpScreenComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private router:Router,private auth:FirebaseAuthService) { }
   
   signup:any = this.formBuilder.group({
     userName:['',[this.validateEmail,Validators.required]],
@@ -35,6 +36,7 @@ export class SignUpScreenComponent implements OnInit {
   }
 
   signIn(){
+    this.auth.SignUp(this.signup.get('userName')?.value,this.signup.get('userName')?.value)
     this.router.navigate(['/']);
   }
 

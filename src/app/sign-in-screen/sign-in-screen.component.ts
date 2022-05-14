@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FirebaseAuthService } from '../firebase-auth.service';
 
 @Component({
   selector: 'app-sign-in-screen',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SignInScreenComponent implements OnInit {
 
-  constructor(private formBuilder: FormBuilder,private router:Router) { }
+  constructor(private formBuilder: FormBuilder,private router:Router,private auth:FirebaseAuthService) { }
 
   
   signin = this.formBuilder.group({
@@ -34,6 +35,7 @@ export class SignInScreenComponent implements OnInit {
   }
 
   signIn(){
+    this.auth.SignIn(this.signin.get('userName')?.value,this.signin.get('password')?.value)
     this.router.navigate(['/dashboard']);
   }
 

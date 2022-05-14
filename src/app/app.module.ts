@@ -11,6 +11,9 @@ import { BookedFlightDetailsComponent } from './booked-flight-details/booked-fli
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FirebaseAuthService } from './firebase-auth.service';
 import { HardCodedFlightDataService } from './hard-coded-flight-data.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { HardCodedFlightDataService } from './hard-coded-flight-data.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [
     FirebaseAuthService,

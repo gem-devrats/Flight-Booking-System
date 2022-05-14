@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { FirebaseAuthService } from './firebase-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private router:Router){
+  constructor(private router:Router,private auth: FirebaseAuthService){
 
   }
   title = 'Flight-Booking-System';
@@ -22,5 +23,10 @@ export class AppComponent {
 
   bookedFlights(){
     this.router.navigate(['/bookedFlightDetails']);
+  }
+
+  signOut(){
+    this.auth.SignOut();
+    this.router.navigate(['/'])
   }
 }
