@@ -1,6 +1,37 @@
+<div class="section">
 <div class="container">
-    <h1>FLight Details</h1>
+    <h3 style="text-align: center; color: black;">FLight Details</h3>
     <div class="card">
-        <h3 style="text-align: center;">Welcome to {{flight.name}} Airlines</h3>
+        <h1 style="text-align: center;">Welcome to {{flight.name}} Airlines</h1>
+        <div class="container text-center justify-center">
+            <img [src]="flight.logo" alt="">
+        </div>
+        <div class="container text-center">
+            <div class="row mt-5">
+              <div class="col">
+                <span style="font-weight: bold; font-size:x-large">{{flight.boardingCode}}<span
+                    style="font-size: 20px; font-weight: 300;"> &nbsp;{{flight.boarding}}</span></span>
+            <br>
+            <span style="font-weight: bold; font-size:x-large;">{{flight.departure}}</span>
+              </div>
+              <div class="col">
+                <span style="font-weight: bold; font-size:x-large;">{{flight.duration}}</span>
+              </div>
+              <div class="col">
+                <span style="font-weight: bold; font-size:x-large">{{flight.destinationCode}}<span
+                    style="font-size: 20px; font-weight: 300;"> &nbsp;{{flight.destination}}</span></span>
+            <br>
+            <span style="font-weight: bold; font-size:x-large;">{{flight.arrivalTime}}</span>
+              </div>
+            </div>
+          </div>
+          <div class="col" style="text-align: center">
+            <span style="font-weight: bold; font-size:x-large">&#8377; {{flight.price}}</span>
+            <br>
+            <span style="font-weight: 300; font-size:x-large">No cost EMI from <span
+                    style="font-size: 20px; font-weight: bold;">&#8377;{{flight.emi}}</span></span>
+        </div>
+        <button class="btn btn-primary mt-4 mb-3" (click)="pay()" type="button">Book Ticket</button>
     </div>
+</div>
 </div>
