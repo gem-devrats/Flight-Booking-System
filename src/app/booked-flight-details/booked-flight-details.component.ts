@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Flight } from '../flight';
+import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 
 
@@ -10,12 +10,16 @@ import { UserService } from '../user.service';
 })
 export class BookedFlightDetailsComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
+  constructor(private userService:UserService,private router:Router) { }
 
   bookedFlightData = this.userService.user.bookedFlightData;
 
   ngOnInit(): void {
 
+  }
+
+  bookFlight(id:Number){
+    this.router.navigate(['flightDetail',id])
   }
 
 }

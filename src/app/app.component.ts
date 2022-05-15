@@ -17,15 +17,16 @@ export class AppComponent {
   isToggleVisible:boolean = false;
   
   showToggle(e:any){
-    console.log(e);
     this.isToggleVisible = !this.isToggleVisible;
   }
 
   bookedFlights(){
+    this.isToggleVisible = false;
     this.router.navigate(['/bookedFlightDetails']);
   }
 
   signOut(){
+    this.isToggleVisible = false;
     this.auth.SignOut();
     this.router.navigate(['/'])
   }

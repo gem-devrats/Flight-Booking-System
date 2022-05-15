@@ -16,7 +16,7 @@ export class FirebaseAuthService {
         localStorage.setItem('email',result.user?.email!)
       })
       .catch((error) => {
-        window.alert(error.message);
+        window.alert('Invalid UserName Passeord');
       });
   }
 

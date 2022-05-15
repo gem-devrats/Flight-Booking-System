@@ -32,7 +32,8 @@
                             style="font-size: 12px; font-weight: bold;">&#8377;{{data.emi}}</span></span>
                 </div>
                 <div class="col">
-                    <a style="font-size: 13px; font-weight: bold;">Flight Details</a>
+                    <a (click)="bookFlight(data.id)" class="dropdown-toggle" type="button" data-toggle="dropdown"
+                        style="font-size: 13px; font-weight: bold; color:blue;">Flight Details</a>
                 </div>
             </div>
         </div>
