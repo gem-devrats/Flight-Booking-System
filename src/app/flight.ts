@@ -9,8 +9,8 @@ export class Flight {
         public boardingCode:string,
         public arrivalTime:string,
         public duration: string,
-        public price:Number,
         public emi:Number,
+        public price:Number,
         public departure:string){
 
     }

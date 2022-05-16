@@ -22,9 +22,16 @@ img{
 
 .section{
     background-image: linear-gradient(to right, #380036,#0cbaba);
-    height: 100vh;
+    height: auto;
 }
 
 *{
     color: whitesmoke;
+}
+
+.btn{
+    font-weight: bold;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
 }
