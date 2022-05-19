@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Flight } from '../flight';
 import { HardCodedFlightDataService } from '../hard-coded-flight-data.service';
 import Razorpay from 'razorpay';
@@ -12,7 +12,7 @@ import Razorpay from 'razorpay';
 export class FlightDetailsComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute,
-    private flightData: HardCodedFlightDataService,) { }
+    private flightData: HardCodedFlightDataService,private router:Router) { }
 
   id: any;
   ngOnInit(): void {
@@ -34,6 +34,7 @@ export class FlightDetailsComponent implements OnInit {
     let data: Flight[] = JSON.parse(localStorage.getItem('bookedFlightData') || "");
     data.push(this.flight);
     localStorage.setItem('bookedFlightData', JSON.stringify(data));
+    this.router.navigate(['/dashboard'])
   }
 
 }
