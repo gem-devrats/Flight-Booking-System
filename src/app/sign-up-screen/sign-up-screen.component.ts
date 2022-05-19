@@ -29,14 +29,13 @@ export class SignUpScreenComponent implements OnInit {
   }
 
   validateConfirmPassword(password:any){
-    console.log(password.value);
     let confirmPassword = localStorage.getItem('confirmPassword');
 
     return  password.value=== confirmPassword ? null : password;
   }
 
-  signIn(){
-    this.auth.SignUp(this.signup.get('userName')?.value,this.signup.get('userName')?.value)
+  signUp(){
+    this.auth.SignUp(this.signup.get('userName')?.value,this.signup.get('password')?.value)
     this.router.navigate(['/']);
   }
 
